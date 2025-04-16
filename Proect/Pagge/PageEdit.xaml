@@ -65,9 +65,9 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
             <Label Content="Количество"/>
-            <TextBox  Text="{Binding Kol_goods}"/>
+            <TextBox  x:Name="act1"/>
             <Label Content="Сумма"/>
-            <TextBox  Text="{Binding summa}"/>
+            <TextBox  x:Name="act2"/>
             <Label Content="Дата заказа"/>
             <DatePicker  Text="{Binding Reader.Date_1, StringFormat=dd.MM.yyyy}"/>
            

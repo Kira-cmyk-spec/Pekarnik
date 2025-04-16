@@ -46,6 +46,27 @@ namespace Proect.Pagge
 
         private void CliventSave(object sender, RoutedEventArgs e)
         {
+            //try
+            //{
+
+
+            //    goods_Salesman items = new goods_Salesman()
+            //    {
+            //        id_Goods = (tov.SelectedItem as Goods).id,
+            //        id_Salesman = (pov.SelectedItem as Salesman).id,
+            //        Date_1 = DateTime.Now,
+            //        Kol_goods = Convert.ToInt32(act1.Text),
+            //        summa = act2.Text,
+            //        IsDelete = true,
+
+
+            //    };
+
+            //    App.Connection.goods_Salesman.Add(items);
+            //    App.Connection.SaveChanges();
+            //    MessageBox.Show("Изменение произошло  успешно ");
+            //}
+            //catch (Exception ex) { MessageBox.Show(ex.Message); }
             App.Connection.SaveChanges();
             MessageBox.Show("Изменение произошло успешно ");
             NavigationService.Navigate(new Pagge.PageOnly());
