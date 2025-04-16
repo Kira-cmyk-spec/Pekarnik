@@ -1,0 +1,68 @@
+﻿<Page x:Class="Proect.Pagge.RedPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Proect.Pagge"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RedPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="1" Grid.ColumnSpan="6" Content="Редактирование чека" Grid.Row="0" FontSize="30" Foreground="Black" FontFamily="Cambria" Margin="10,10,10,0"/>
+
+        <ListView Name="ServicesLv" Grid.Row="1" Grid.Column="1" Grid.RowSpan="6" Grid.ColumnSpan="6" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Column="1" Grid.ColumnSpan="2">
+                            <Label Content="Изделие = "/>
+                            <TextBox x:Name="NameTB" Text="{Binding id_Goods}" FontFamily="Cambria"/>
+                            <Label Content=" Количество ="/>
+                            <TextBox x:Name="CommentTB" Text="{Binding Kol_goods}" FontFamily="Cambria" />
+                            <Label Content="Дата заявки"/>
+                            <DatePicker  Text="{Binding Reader.Date_1, StringFormat=dd.MM.yyyy}"/>
+                            <Label Content="сумма ="/>
+                            <TextBox x:Name="SumTB" Text="{Binding summa}" FontFamily="Cambria" />
+
+                        </StackPanel>
+                        <Button Content="Сохранить" Name="SaveBTN" Grid.Column="2" Grid.Row="1" Width="90" Height="50" Click="SaveBTN_Click"  Foreground="White"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Content="Назад" Name="ExetBTN" Grid.Column="6" Grid.Row="7" Width="90" Height="50" Click="ExetBTN_Click"  Foreground="White"/>
+        <Button Content="Закрыть" Name="CloseBTN" Grid.Column="7" Grid.Row="7" Width="90" Height="50" Click="CloseBTN_Click"  Foreground="White"/>
+      
+    </Grid>
+</Page>

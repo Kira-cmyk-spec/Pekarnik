@@ -1,0 +1,78 @@
+﻿<Page x:Class="Proect.Pagge.PageOnly"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Proect.Pagge"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageOnly">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="6*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Column="1">
+            <StackPanel >
+
+                <TextBlock x:Name="label1" Foreground="White"/>
+
+                <ListView  x:Name="Listanimals" >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <StackPanel>
+                                    <TextBlock>
+                                 <Run Text="Изделия =" />
+                                 <Run Text="{Binding Goods.Name}" />
+                                    </TextBlock>
+                                    <TextBlock>
+                                <Run Text="Продавец =" />
+                                <Run Text="{Binding Salesman.Name}" />
+                                    </TextBlock>
+                                    <TextBlock>
+                                        <Run Text="Количество заказанных  =" />
+                                            <Run Text="{Binding Kol_goods}" />
+                                    </TextBlock>
+                                    <TextBlock>
+                                <Run Text="Дата Приготовления =" />
+                                <Run Text="{Binding Goods.Date_0, StringFormat=dd.MM.yyyy}" />
+                                    </TextBlock>
+                                    <TextBlock>
+                                <Run Text="Дата Проведения =" />
+                                <Run Text="{Binding Date_1, StringFormat=dd.MM.yyyy}" />
+                                    </TextBlock>
+                                  
+                                    <TextBlock>
+                                <Run Text="Сумма  =" />
+                                <Run Text="{Binding summa}" />
+                                    </TextBlock>
+
+                                </StackPanel>
+
+
+                                <StackPanel >
+                                    <Button Content="редактировать" x:Name="edit" Click="edit_Click"/>
+                                    <Button Content="удалить" x:Name="Delete" Click="Delete_Click"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label Content="Поиск"/>
+                <TextBox x:Name="Group_TextBox" Width="200" Margin="5 -20 5 0  " TextChanged="Group_TextBox_TextChanged"/>
+                <Button x:Name="AddAnimal" Click="AddAnimal_Click" Height="30" Content="Добавить заявку"/>
+                <DatePicker Name="StartDatePicker"  Grid.Column="0" Grid.Row="0"  />
+                <DatePicker Name="EndDatePicker" Grid.Column="0" Grid.Row="1"   />
+                <Button Content="Сортировать" Name="FiltrBTN" Grid.Column="0" Grid.Row="2" Width="90" Height="50" Click="FiltrBTN_Click"  Foreground="White"/>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
